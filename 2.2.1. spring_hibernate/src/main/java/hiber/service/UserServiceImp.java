@@ -12,12 +12,20 @@ import java.util.List;
 @Service
 public class UserServiceImp implements UserService {
 
-   @Autowired
    private UserDao userDao;
+   private CarService carService;
+
+   //   Могу заавтовайрить метод
+   @Autowired
+   public void addOtherServices(UserDao userDao, CarService carService) {
+      this.userDao = userDao;
+      this.carService = carService;
+   }
 
    @Transactional
    @Override
    public void add(User user) {
+      carService.add(user.getCar());
       userDao.add(user);
    }
 
