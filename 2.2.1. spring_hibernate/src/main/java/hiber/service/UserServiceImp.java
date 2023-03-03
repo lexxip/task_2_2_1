@@ -3,7 +3,6 @@ package hiber.service;
 import hiber.dao.UserDao;
 import hiber.model.Car;
 import hiber.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,12 +11,10 @@ import java.util.List;
 @Service
 public class UserServiceImp implements UserService {
 
-   private UserDao userDao;
-   private CarService carService;
+   private final UserDao userDao;
+   private final CarService carService;
 
-   //   Могу заавтовайрить метод
-   @Autowired
-   public void addOtherServices(UserDao userDao, CarService carService) {
+   public UserServiceImp(UserDao userDao, CarService carService) {
       this.userDao = userDao;
       this.carService = carService;
    }

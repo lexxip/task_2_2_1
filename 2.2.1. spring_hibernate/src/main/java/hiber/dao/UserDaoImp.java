@@ -13,7 +13,6 @@ public class UserDaoImp implements UserDao {
 
    private final SessionFactory sessionFactory;
 
-   //   Могу отправить бином в конструктор
    public UserDaoImp(SessionFactory sessionFactory) {
       this.sessionFactory = sessionFactory;
    }

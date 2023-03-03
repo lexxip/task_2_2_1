@@ -10,7 +10,6 @@ public class CarServiceImp implements CarService {
 
    private final CarDao carDao;
 
-   //   Могу отправить бином в конструктор
    public CarServiceImp(CarDao carDao) {
       this.carDao = carDao;
    }
